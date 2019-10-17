@@ -14,7 +14,7 @@ spec:
     name: helm/elasticsearch/elasticsearch
     version: 7.4.0
   values:
-    image: docker.elastic.co/elasticsearch/elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
     imageTag: 7.4.0
     persistence:
       enabled: false
