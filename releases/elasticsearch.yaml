@@ -5,6 +5,7 @@ metadata:
   name: elasticsearch
   namespace: logging
   annotations:
+    fluxcd.io/ignore: "false"
     fluxcd.io/automated: "true"
     fluxcd.io/tag.chart-image: semver:~7.4
 spec:
