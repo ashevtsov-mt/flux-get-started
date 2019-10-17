@@ -10,7 +10,7 @@ spec:
   releaseName: elasticsearch
   chart:
     repository: https://helm.elastic.co/
-    name: elasticsearch/elasticsearch
+    name: elasticsearch
     version: 7.4.0
   values:
     image: docker.elastic.co/elasticsearch/elasticsearch
