@@ -16,6 +16,6 @@ spec:
     image: docker.elastic.co/elasticsearch/elasticsearch
     imageTag: 7.4.0
     replicas: 2
-    antiAffinity: soft
+    antiAffinity: none
     persistence:
       enabled: false
