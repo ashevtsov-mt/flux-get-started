@@ -1,0 +1,15 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: filebeat
+  namespace: logging
+spec:
+  releaseName: filebeat
+  chart:
+    repository: https://helm.elastic.co/
+    name: filebeat
+    version: 7.4.0
+  values:
+    image: docker.elastic.co/beats/filebeat
+    imageTag: 7.4.0
