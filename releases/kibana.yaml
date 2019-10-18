@@ -1,0 +1,21 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: kibana
+  namespace: logging
+spec:
+  releaseName: kibana
+  chart:
+    repository: https://helm.elastic.co/
+    name: kibana
+    version: 7.4.0
+  values:
+    image: docker.elastic.co/kibana/kibana
+    imageTag: 7.4.0
+    ingress:
+      enabled: true
+      hosts:
+        - kibana.local
+    persistence:
+      enabled: false
