@@ -13,9 +13,3 @@ spec:
   values:
     image: docker.elastic.co/beats/filebeat
     imageTag: 7.4.0
-    filebeatConfig:
-      filebeat.yml: |
-        output.elasticsearch:
-          hosts: ["elasticsearch-master:9200"]
-        setup.kibana:
-          host: "http://kibana-kibana:5601"
