@@ -1,0 +1,27 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: fluentd
+  namespace: logging
+spec:
+  releaseName: fluentd
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: fluentd
+    version: 2.1.3
+  values:
+    image:
+      repository: gcr.io/google-containers/fluentd-elasticsearch
+      tag: v2.4.0
+    output:
+      host: elasticsearch-master
+    ingress:
+      enabled: true
+      hosts:
+        - name: http-input.local
+          protocol: TCP
+          servicePort: 9880
+          path: /
+    persistence:
+      enabled: false
