@@ -16,6 +16,14 @@ spec:
       tag: v2.4.0
     output:
       host: elasticsearch-master
+    service:
+      ports:
+        - name: "monitor-agent"
+          protocol: TCP
+          containerPort: 24220
+        - name: "http-input"
+          protocol: TCP
+          containerPort: 9880
     ingress:
       enabled: true
       hosts:
