@@ -1,0 +1,20 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: fluentd-k8s
+  namespace: logging
+spec:
+  releaseName: fluentd-k8s
+  chart:
+    repository: https://kiwigrid.github.io/
+    name: fluentd-elasticsearch
+    version: 5.0.0
+  values:
+    image:
+      repository: quay.io/fluentd_elasticsearch/fluentd
+      tag: v2.7.0
+    elasticsearch:
+      host: elasticsearch-master
+      port: 9200
+      logstashPrefix: logstash-k8s
