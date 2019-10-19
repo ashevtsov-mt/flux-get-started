@@ -3,7 +3,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: fluentd-k8s
-  namespace: logging
+  namespace: kube-system
 spec:
   releaseName: fluentd-k8s
   chart:
